@@ -23,7 +23,7 @@
     justify-content: center;
     flex: 1;
   }
-  .key {
+  .key{
     transition: all .07s ease; /*过渡样式*/
     border: .4rem solid #000;
     border-radius: 0.5rem;
@@ -51,57 +51,81 @@
     <span class="sound">clap</span>
   </div> -->
   <div class="keys">
-    <div class="key">
+    <div class="1 key">
       <div>A</div>
       <span class="sound">clap</span>
     </div>
-    <div class="key">
+    <div class="2 key">
       <div>S</div>
       <span class="sound">hihat</span>
     </div>
-    <div class="key">
+    <div class="3 key">
       <div>D</div>
       <span class="sound">kick</span>
     </div>
-    <div class="key">
+    <div class="4 key">
       <div>F</div>
       <span class="sound">openhat</span>
     </div>
-    <div class="key">
+    <div class="5 key">
       <div>G</div>
       <span class="sound">boom</span>
     </div>
-    <div class="key">
+    <div class="6 key">
       <div>H</div>
       <span class="sound">ride</span>
     </div>
-    <div class="key">
+    <div class="7 key">
       <div>J</div>
       <span class="sound">snare</span>
     </div>
-    <div class="key">
+    <div class="8 key">
       <div>K</div>
       <span class="sound">tom</span>
     </div>
-    <div class="key">
+    <div class="9 key">
       <div>L</div>
       <span class="sound">tink</span>
     </div>
   </div>
-  <audio src="sounds/clap.wav" autoplay/>
+  <audio class="audio" src="sounds/clap.wav" autoplay/>
+  <audio class="audio" src="sounds/boom.wav" autoplay/>
+  <audio class="audio" src="sounds/hihat.wav" autoplay/>
+  <audio class="audio" src="sounds/kick.wav" autoplay/>
+  <audio class="audio" src="sounds/openhat.wav" autoplay/>
+  <audio class="audio" src="sounds/ride.wav" autoplay/>
+  <audio class="audio" src="sounds/snare.wav" autoplay/>
+  <audio class="audio" src="sounds/tink.wav" autoplay/>
+  <audio class="audio" src="sounds/tom.wav" autoplay/>
   <script>
-  const key = document.querySelector('.key');
-  const audio=document.querySelector('audio');
-  audio.play();
-  // console.log(key);  
+  //const key = document.querySelector('.key');
+  //const audio=document.querySelector('audio');
+  //  console.log(key);  
   
-  // setTimeout(() => {
-  //   key.classList.add('playing');
-  // }, 3000)
-  function playSound(){
-    key.classList.add('playing');
-  }
-  window.addEventListener('keydown',playSound);
+
+  //  function playSound(){
+  //    key.classList.add('playing');
+  //    audio.play();
+  //    setTimeout(() => {
+  //   key.classList.remove('playing');
+  //  }, 200)
+  // }
+  // window.addEventListener('keydown',playSound);
+  const audios=document.querySelectorAll('.audio');
+  const items=document.querySelectorAll('.key');
+        //同步的
+        for(let i=0;i<items.length;i++)
+        { 
+            //点击事件 JS的事件异步的
+            items[i].addEventListener('keydown',function(e){
+              console.log(e.KeyCode);
+             items[i].classList.add('playing');
+             audios[i].play();
+             setTimeout(() => {
+             items[i].classList.remove('playing');
+             }, 200)
+             })
+        }
   </script>
 </body>
 </html>

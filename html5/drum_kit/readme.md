@@ -8,7 +8,7 @@
     行内元素?
     - 弹性布局
     display:flex;
-    所以子元素的块级元素被干掉
+    所有子元素的块级元素被干掉
     min-height:100vh;   
 <!-- 1vh = 视口高度的1%  1vw = 视口宽度的1%-->
     justify-content:center;
