@@ -5,6 +5,5 @@
     title="{{item.title}}"
     thumb="{{item.image}}"
     data-id="{{item._id}}">
-
   </van-card>
 </block>

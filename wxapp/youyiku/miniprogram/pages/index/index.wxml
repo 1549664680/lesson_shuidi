@@ -1,0 +1,131 @@
+<scroll-view bindscroll="scroll" class="sv">
+<view class="top">
+  <view style="position:absolute;left:20rpx;top:10rpx">
+  <image src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/top1.png?sign=97be8a1961feac39efcb3908aada4983&t=1575118932"style="width: 15px; height: 15px;"/>
+  </view>
+  <view style="position:absolute;left:510rpx;top:10rpx">
+  <image src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/top2.png?sign=b9b5d5dc47795629e5c73e536680f760&t=1575118955"style="width: 15px; height: 15px;"/>
+  </view>
+   <view style="position:absolute;left:600rpx;top:10rpx">
+  <image src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/top3.png?sign=e5f0bb3e4789009cb0f9d6eae8052331&t=1575118967"style="width: 15px; height: 15px;"/>
+  </view>
+   <view style="position:absolute;left:690rpx;top:10rpx">
+  <image src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/top4.png?sign=a66dfd02ba56bb515fd1ffbe1ea1d07c&t=1575118977"style="width: 15px; height: 15px;"/>
+  </view>
+</view>
+
+<van-tabs active="{{ active }}" bind:change="onChange" color="red" id="tabs" >
+  <van-tab title="新品·活动" color="red">
+    
+  </van-tab>
+  <van-tab title="商场">
+  </van-tab>
+</van-tabs>
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="tab">
+  <block wx:for="{{imgUrls}}" wx:key="key" >
+  <swiper-item >
+  <image src="{{item}}" class="si"/>
+  </swiper-item>
+  </block>
+</swiper>
+  <view class="Middle">
+    <view style="position:relative;left:11rpx;top:5rpx;  width:200rpx;height:100rpx"><image src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/gezi1.PNG?sign=a698fdcae0b82cd20efccf8f58f43f53&t=1575118995"style="width:300rpx;height:100rpx"/></view>
+    <view style="position:relative;left:400rpx;top:-45rpx;  width:170rpx;height:70rpx"><image src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/gezi2.PNG?sign=c91b288d83c7deeee312b69b613536ae&t=1575119006"style="width:145rpx;height:70rpx"/></view>
+    <view style="position:relative;left:11px;top:-40rpx; width:145rpx;height:50rpx"><image src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/gezi3.PNG?sign=db0827e56599bea626602feb0f35d9c4&t=1575119016"style="width:145rpx;height:70rpx"/></view>
+    <view style="position:relative;left:210px;top:-90rpx; width:145rpx;height:50rpx"><image src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/gezi4.PNG?sign=64bab6e87087b4d1012e3403faafaf34&t=1575119028"style="width:145rpx;height:70rpx"/></view>
+  </view>
+
+  <view class="Below">
+    <view style="position:relative;left:11px;top:5px;">人气推荐</view>
+    <view style="position:relative;top:10px;">
+      <block wx:for="{{products}}" wx:key="key">
+        <van-card
+        price="{{Math.round(item.view)}}"
+        desc="{{item.color}}"
+        title="{{item.title}}"
+        thumb="{{item.image}}"
+        data-id="{{item._id}}">
+        </van-card>
+      </block>
+    </view>
+  </view>
+
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item  class="item">
+    <image
+      slot="icon"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/index.png?sign=964601373c17751d3fff1ce81bc23b89&t=1575121961"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    <image
+      slot="icon-active"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/index.png?sign=964601373c17751d3fff1ce81bc23b89&t=1575121961"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    首页
+    </van-tabbar-item>
+  <van-tabbar-item  info="" class="item">
+    <image
+      slot="icon"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/kefu.png?sign=6a19e0ed0c4c5064374ef54690bb5d56&t=1575121993"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    <image
+      slot="icon-active"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/kefu.png?sign=6a19e0ed0c4c5064374ef54690bb5d56&t=1575121993"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    客服
+    </van-tabbar-item>
+  <van-tabbar-item class="item">
+    <image
+      slot="icon"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/door.png?sign=b6466da4b4e82de9f13d32b4a2725fe3&t=1575122012"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    <image
+      slot="icon-active"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/door.png?sign=b6466da4b4e82de9f13d32b4a2725fe3&t=1575122012"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    门店入口
+    </van-tabbar-item>
+  <van-tabbar-item class="item">
+    <image
+      slot="icon"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/shoppingcar.png?sign=294fe722861257ed3bbed746569a07d8&t=1575122030"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    <image
+      slot="icon-active"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/shoppingcar.png?sign=294fe722861257ed3bbed746569a07d8&t=1575122030"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    购物车</van-tabbar-item>
+  <van-tabbar-item class="item">
+    <image
+      slot="icon"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/account.png?sign=1892b60ec364a841671ddfc2302bc34c&t=1575122046"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    <image
+      slot="icon-active"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/account.png?sign=1892b60ec364a841671ddfc2302bc34c&t=1575122046"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    我的账户</van-tabbar-item>
+  
+</van-tabbar>  
+
+</scroll-view>

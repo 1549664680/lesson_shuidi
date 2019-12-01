@@ -1,0 +1,30 @@
+.sv{
+  margin:0;
+  padding:0;
+}
+.item{
+  background:red;
+}
+.top{
+  height: 5vh;
+  background: rgb(233, 231, 231);
+}
+.Middle{
+  height: 110px;
+  width: 100%;
+}
+.Below{
+  height: 100px;
+  width: 100%;
+}
+.slide-image{
+  width:90vh;
+}
+.tab{
+  width: 100%;
+  height: 500rpx;
+}
+.si{
+  width: 100%;
+  height: 100%;
+}
