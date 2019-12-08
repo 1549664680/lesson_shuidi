@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "root",
+    "password": "1549664680",
+    "database": "ljr_instagram",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}
