@@ -1,0 +1,76 @@
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item  class="item" bind:click="index">
+    <image
+      slot="icon"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/index.png?sign=964601373c17751d3fff1ce81bc23b89&t=1575121961"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    <image
+      slot="icon-active"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/index.png?sign=964601373c17751d3fff1ce81bc23b89&t=1575121961"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    首页
+    </van-tabbar-item>
+  <van-tabbar-item class="item">
+    <image
+      slot="icon"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/kefu.png?sign=6a19e0ed0c4c5064374ef54690bb5d56&t=1575121993"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    <image
+      slot="icon-active"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/kefu.png?sign=6a19e0ed0c4c5064374ef54690bb5d56&t=1575121993"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    客服
+    </van-tabbar-item>
+  <van-tabbar-item class="item" bind:click="shangcheng">
+    <image
+      slot="icon"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/door.png?sign=b6466da4b4e82de9f13d32b4a2725fe3&t=1575122012"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    <image
+      slot="icon-active"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/door.png?sign=b6466da4b4e82de9f13d32b4a2725fe3&t=1575122012"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    门店入口
+    </van-tabbar-item>
+  <van-tabbar-item class="item" bind:click="gouwuche">
+    <image
+      slot="icon"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/shoppingcar.png?sign=294fe722861257ed3bbed746569a07d8&t=1575122030"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    <image
+      slot="icon-active"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/shoppingcar.png?sign=294fe722861257ed3bbed746569a07d8&t=1575122030"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    购物车</van-tabbar-item>
+  <van-tabbar-item class="item" bind:click="account">
+    <image
+      slot="icon"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/account.png?sign=1892b60ec364a841671ddfc2302bc34c&t=1575122046"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    <image
+      slot="icon-active"
+      src="https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/account.png?sign=1892b60ec364a841671ddfc2302bc34c&t=1575122046"
+      mode="aspectFit"
+      style="width: 30px; height: 18px;"
+    />
+    我的账户
+    </van-tabbar-item>
+</van-tabbar>  

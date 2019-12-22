@@ -1,30 +1,46 @@
-.sv{
-  margin:0;
-  padding:0;
+.top{
+  height: 75rpx;
+  background: rgb(233, 231, 231);
+}
+.top-1,.top-2,.top-3,.top-4{
+  top:20rpx;
+  position:absolute;
+}
+.top-1{
+  left:28rpx
+}
+.top-2{
+  left:474rpx
+}
+.top-3{
+  left:574rpx
+}
+.top-4{
+  left:674rpx
+}
+.tab{
+  width: 750rpx;
+  /* position: fixed; */
+}
+.tab1,.tab2{
+  width: 750rpx;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper{
+  width: 750rpx;
+  height: 500rpx;
+}
+.tu4{
+  width: 750rpx;
+}
+.renqi{
+  margin: 15rpx;
+}
+.product{
+  width: 750rpx;
 }
 .item{
   background:red;
-}
-.top{
-  height: 5vh;
-  background: rgb(233, 231, 231);
-}
-.Middle{
-  height: 110px;
-  width: 100%;
-}
-.Below{
-  height: 100px;
-  width: 100%;
-}
-.slide-image{
-  width:90vh;
-}
-.tab{
-  width: 100%;
-  height: 500rpx;
-}
-.si{
-  width: 100%;
-  height: 100%;
 }
