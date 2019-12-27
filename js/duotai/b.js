@@ -5,7 +5,7 @@ var makeSound = function(animal) {
     // }else if (animal instanceof Chicken){
     //     console.log('咯咯咯')
     // }
-    animal.say()
+    animal.say() //面向对象的优化
 }
 var Duck = function() {}
 Duck.prototype.say = function() {
