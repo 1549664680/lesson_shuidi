@@ -1,0 +1,12 @@
+{
+  "name": "etag",
+  "version": "1.0.0",
+  "description": "- http响应\r   网页中有很多http响应\r   - 静态资源 耗时\r     - html文件\r     - 图片\r     req, res  http 一来一回\r     readFile  res.end(file)  setHeader \r     这里有什么问题？ \r   文件在传输过程中， 有这个必要吗？\r   1. 浏览器端会缓存的， 以便下次更快的打开 请空 \r   浏览器没必要发送请求 如果后端图片没有改变 ? \r   2. 服务器端的图片不会怎么变，带宽资源 没必要再次去传输\r   用户修改了， 一定要通知浏览器端重新下载\r   etag是服务器根据当前文件的内容， 生成一个唯一标识， \r   只要内容不变 就不重复传输的 机制",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

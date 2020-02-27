@@ -44,3 +44,63 @@
 .item{
   background:red;
 }
+
+.mask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background:darkgray;
+  z-index: 9000;
+  opacity: 0.7;
+}
+
+.modalDlg{
+  width: 678rpx;
+  height: 592rpx;
+  position: absolute;
+  top: 412rpx;
+  left: 37rpx;
+  z-index: 9999;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.t1{
+  font-weight:bold;
+  position: relative;
+  top: 25rpx;
+  left: -250rpx;
+}
+.t2{
+  margin: 20rpx;
+  position: relative;
+  left: -250rpx;
+  top: 20rpx;
+}
+.t3{
+  margin: 20rpx;
+  position: relative;
+  left: -200rpx;
+}
+.t4{
+  position: relative;
+  left: -150rpx;
+}
+.t5{
+  margin: 20rpx;
+  position: relative;
+  left: -150rpx;
+}
+.tu1{
+  position: absolute;
+  top: 25rpx;
+  left: 600rpx;
+}
+.tu2,.tu3{
+  position: relative;
+  left: 0rpx;
+  top: 20rpx;
+}

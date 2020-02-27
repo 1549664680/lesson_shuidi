@@ -1,4 +1,0 @@
-<view>
-    <van-button type="primary" square block bind:click="addData">新增数据
-    </van-button>
-</view>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google material design & Flutter</title>
+  <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+  <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+  <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div id="root">
+
+    <!-- 带有波浪的感觉 很好的交互感觉 -->
+    <!-- <div class="xButton ripple " >按钮</div>
+    <div class="xButton ripple primary " >按钮</div>
+    <div class="xButton ripple cricle" >按钮</div>
+    <div class="xButton ripple warning" >按钮</div> -->
+  </div>
+  <script type="text/babel">
+    // 页面上有个root元素 写的不是具体代码
+    // 写的是为了未来要用的组件 写的抽象的 公用的组件代码
+    function Button(props){
+      let {children , type, shape, onClick,block} = props
+      return (
+        <div 
+        onClick = {onClick}
+        className={`xButton ripple ${type} ${shape} ${block?'block':''}`}>
+          {children}
+        </div>
+      )
+    }
+    ReactDOM.render(
+      <div>
+        <Button>default</Button>  
+        <Button type="primary">primary</Button>
+        <Button type="warning" >warning </Button>
+        <Button type="primary" block>primary&block</Button>
+        <Button type="warning" shape='circle'>ccle </Button>
+        <Button onClick={() => { alert('hiha')}}>onClick</Button>
+      </div>
+    // 是一个想把css 类名变量 js点击交互 组装到一起的 名字叫做 Button El-Button
+    ,document.getElementById('root'))
+  </script>
+</body>
+</html>

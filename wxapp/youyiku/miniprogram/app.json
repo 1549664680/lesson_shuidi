@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/account/account",
     "pages/index/index",
     "pages/shangcheng/shangcheng",
     "pages/userConsole/userConsole",
@@ -14,8 +15,8 @@
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
     "pages/im/room/room",
-    "pages/gouwuche/gouwuche",
-    "pages/account/account"
+    "pages/gouwuche/gouwuche"
+
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

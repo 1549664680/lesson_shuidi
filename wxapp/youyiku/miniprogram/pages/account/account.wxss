@@ -1,4 +1,65 @@
+.all{
+ background-color:white;
+}
 .item{
     background:red;
   }
-  
+.redbg{
+  width: 100%;
+  height: 322rpx;
+  background-color: red;
+}
+.allitem{
+  width: 100%;
+  height: 342rpx;
+  font-size: 25rpx;
+}
+.fuwu{
+  width: 100%;
+  height: 120rpx;
+  font-size: 25rpx;
+  position: relative;
+  left: 80rpx;
+}
+.item1,.item2,.item3,.item4,.item5,.item6,.fuwu1,.fuwu2,.fuwu3,.fuwu4,.fuwu5,.fuwu6{
+ width: 33%;
+ height: 160rpx;
+ float: left;
+ text-align: center;
+}
+.allitem image{
+  width:2em;
+  height:2em;
+  position: relative;
+  top: 45rpx;
+  left: 50rpx;
+}
+.allitem p{
+  position: relative;
+  top: 80rpx;
+  left: -20rpx;
+}
+.divLine{
+  float: left;
+  background: rgb(227, 228, 226);
+  width: 2rpx;
+  height: 160.5rpx;
+}
+.divLinelong{
+  float: left;
+  background: rgb(227, 228, 226);
+  width: 100%;
+  height: 2rpx;
+}
+.divLinelonglong{
+  background: rgb(227, 228, 226);
+  width: 100%;
+  height: 20rpx;
+}
+.qiehuang{
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  position: relative;
+  top: 20rpx;
+}

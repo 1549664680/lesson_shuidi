@@ -2,7 +2,9 @@ const db=wx.cloud.database();
 const productsCollection=db.collection('products');
 Page({
   data: {
-    active: 0,
+    active1: 0,
+    active2: 0,
+    showModal: false,
     imgUrls:[
       "https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/swiper1.jpg?sign=3f3f33b5048385ec80d6ee9fe719caed&t=1575118473",
       "https://6c61-lan-pxbyd-1300705441.tcb.qcloud.la/swiper2.jpg?sign=b75476688239824668c43f6a7b58c0f1&t=1575118585",
@@ -26,10 +28,12 @@ onLoad(){
         })
     })
 },
-onChange(event) {
-    this.setData({ active: event.detail });
+onChange1(event) {
+    this.setData({ active1: event.detail });
 },
-
+onChange2(event) {
+  this.setData({ active2: event.detail });
+},
   index: function() {
       wx.navigateTo({
       url: '../index/index'
@@ -50,4 +54,14 @@ onChange(event) {
     url: '../account/account'
   })
   },
+  kefu: function() {
+    this.setData({
+    showModal: true
+    })
+  },
+  go: function() { 
+    this.setData({
+    showModal: false
+    })
+  }
 });
