@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>图片的延迟加载</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			margin: 0 auto;
+			width: 800px;
+		}
+
+		.imgBox {
+			margin-bottom: 20px;
+			height: 160px;
+			background: #BBB;
+			overflow: hidden;
+		}
+
+		.imgBox img {
+			display: none;
+			width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<!-- <div class="imgBox">
+			<img src="" alt="" data-img="http://www.zhufengpeixun.cn/main/img/banner10.png">
+		</div> -->
+	</div>
+
+
+	<!-- IMPORT JS -->
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="delayImg.js"></script>
+</body>
+
+</html>

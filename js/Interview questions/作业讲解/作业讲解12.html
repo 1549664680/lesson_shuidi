@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		function currying(fn, length) {
+			length = length || fn.length;
+			return function (...args) {
+				if (args.length >= length) {
+					return fn(...args);
+				}
+				return currying(fn.bind(null, ...args), length - args.length);
+			}
+		}
+
+		function add(n1, n2, n3) {
+			return n1 + n2 + n3;
+		}
+		add = currying(add, 3);
+		console.log(add(1)(2)(3));
+
+		/* 
+		//fn=addOrigin;
+		//length=3;
+		function (...args) {
+			// args=[1,2];  
+			if (args.length >= length) {//=>2>=3
+				return fn(...args);
+			}
+			return currying(fn.bind(null, ...args), length - args.length);
+		};
+
+		//fn=fn.bind(null, 1,2);
+		//length=1
+		function (...args) {
+			//arg=[3];
+			if (args.length >= length) { //=>1>=1
+				return fn(...args);
+			}
+			return currying(fn.bind(null, ...args), length - args.length);
+		} 
+		Function.prototype.bind = function bind(context,...outerArgs){
+			return function(...innerArgs){
+				this.call(context,...[outerArgs,innerArgs])
+			}
+		}
+		*/
+	</script>
+</body>
+
+</html>

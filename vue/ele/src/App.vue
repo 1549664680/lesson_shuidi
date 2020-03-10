@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+     <x-button type="primary">button</x-button>
     <!-- <div style="width:16rem;height:2rem;background-color:red;"></div>
     <div id="nav">
       <router-link to="/">Home</router-link> |
@@ -11,35 +12,35 @@
       <span class="head_logo" slot="logo">ele.me</span>
     </head-top> -->
     <!--地址 -->
-    <head-top head-title="编辑地址" go-back="true">
+    <!-- <head-top head-title="编辑地址" go-back="true"> -->
       <!-- <span class="head_logo" slot="logo">ele.me</span> -->
-      <span class="edit" slot="edit">编辑</span>
-    </head-top>
+      <!-- <span class="edit" slot="edit">编辑</span>
+    </head-top> -->
   </div>
 </template>
 <script>
-import Header from './components/header/header';
+// import Header from './components/header/header';
 
 export default {
   components: {
-    // 怎么解决？
-    "head-top": Header
+    // // 怎么解决？
+    // "head-top": Header
   }  
 }
-</script>
-<style lang="stylus">
-@import "./style/common.styl"
-@import "./style/mixin.styl"
+// </script>
+// <style lang="stylus">
+// @import "./style/common.styl"
+// @import "./style/mixin.styl"
 
-.head_logo
-  left .4rem 
-  font-weight 400
-  sc(0.7rem, #fff)
-  wh(2.3rem, 0.7rem)
-  ct()
+// .head_logo
+//   left .4rem 
+//   font-weight 400
+//   sc(0.7rem, #fff)
+//   wh(2.3rem, 0.7rem)
+//   ct()
 
-.edit
-  right 0.4rem
-  sc(0.7rem, #fff)
-  ct()
-</style>
+// .edit
+//   right 0.4rem
+//   sc(0.7rem, #fff)
+//   ct()
+// </style>

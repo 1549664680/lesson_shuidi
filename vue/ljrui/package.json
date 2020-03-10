@@ -1,0 +1,33 @@
+{
+  "name": "ljrui",
+  "version": "0.1.1",
+  "description": "设计的第一个vue框架",
+  "keywords": [
+    "component",
+    "vue",
+    "vue-component"
+  ],
+  "homepage": "https://github.com/1549664680",
+  "license": "MIT",
+  "main": "lib/ljrui.umd.min.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --target lib --name ljrui --dest lib packages/index.js"
+  },
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.5"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.2.0",
+    "@vue/cli-plugin-router": "~4.2.0",
+    "@vue/cli-service": "~4.2.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

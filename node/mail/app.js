@@ -10,10 +10,9 @@ let transporter = nodemailer.createTransport({
 })
 
 let mailOptions = {
-    from:"光棍节前的呐喊<1549664680@qq.com>",
-    to:"2268849815@qq.com",
-    subject:'哈哈哈',
-    html:'<b>肖某，干嘛呢，课不来上课，都几节课没来了，还要不要学习了<b>'
+    from:"<1549664680@qq.com>",
+    to:"3418786721@qq.com",
+    subject:'1234',
 }
 
 transporter.sendMail(mailOptions,(error,info) => {
