@@ -5,7 +5,7 @@ var compressString = function(S) {
   if(len<3){
     return S
   }
-  for (var i = 1; i< len; i++){
+  for (var i = 1; i<= len; i++){
     if(temp[temp.length-1] == S[i]){
       temp.push(S[i]);
     }else{
@@ -14,14 +14,10 @@ var compressString = function(S) {
       temp = [];
       temp.push(S[i]);
     }
-    if(i==(len-1)){
-      res.push(temp[0]);
-      res.push(temp.length)
-    }
   }
   if( res.join('').length<S.length){
     return  res.join('');
   }
   return S;
 };
-console.log(compressString("bbbac"))
+console.log(compressString("bbbaadadc"))
