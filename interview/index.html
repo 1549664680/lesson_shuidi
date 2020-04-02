@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .out {
+      /* position: absolute;
+      top: 50%; */
+      background-color: blue;
+      /* transform: translateY(-50%); */
+      margin-left: 10px;
+      margin-right: 10px;
+      text-align: center;
+      font-size: 20px;
+      width: 100%;
+    }
+
+    .in {
+      height: 0;
+      padding: 25% 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="out">
+    <div class="in">
+      A
+    </div>
+  </div>
+  <script>
+    function foo() {
+      console.log(arguments)
+      console.log(Array.from(arguments))
+      console.log([...arguments])
+      console.log(Array.prototype.slice.call(arguments))
+      console.log(Array.prototype.splice.call(arguments, 0))
+    }
+    foo(1, 2, 3, 4, 5)
+
+
+    if ([] == false) { console.log('1') } // 1
+    // 因为 number(false) = 0
+    // number([]) = 0
+this.num = 9; 
+var mymodule = {
+  num: 81,
+  getNum: function() { return this.num; }
+};
+
+mymodule.getNum(); // 81
+
+var getNum = mymodule.getNum;
+getNum(); // 9, 因为在这个例子中，"this"指向全局对象
+
+// 创建一个'this'绑定到module的函数
+var boundGetNum = getNum.bind(mymodule);
+console.log(boundGetNum()) // 81
+  </script>
+</body>
+
+</html>
