@@ -26,8 +26,6 @@
 //   return false
 // };
 var canJump = function(nums) {
-  //换一种思路，计算出该路线能到的最远距离，判断最远的距离是否超过了该路径或者刚好到达终点
-  //每一次都计算当前位置以及以前能走到的最远距离（贪心）
   let maxDistance = 0;
   const len = nums.length;
   for(let i = 0; i < len; i ++) {
