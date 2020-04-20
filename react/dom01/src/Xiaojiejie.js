@@ -1,7 +1,8 @@
 import React,{Component,Fragment} from 'react'
 import './style.css'
 import Xioajiejieitem from './Xiaojiejieitem'
-
+import axios from 'axios'
+import Boss from './Boss'
 
 class Xiaojiejie extends Component{
   constructor(props){
@@ -14,6 +15,11 @@ class Xiaojiejie extends Component{
       ]
     }
   }
+  // componentDidMount(){
+  //   axios.post()
+  //   .then(res)
+  //   .catch(error)
+  // }
   render(){
     return (
       <Fragment>
@@ -50,6 +56,7 @@ class Xiaojiejie extends Component{
           }
         </ul>
         <h2>当前选择服务数量:{this.state.list.length}</h2>
+        <Boss/>
       </Fragment>
     )
   }
