@@ -1,37 +1,25 @@
 .input{
   border: 3px solid #ae7000;
 }
-.show{
-  animation: show-item 2s ease-in forwards;
+
+.boss-Text-enter{
+  opacity: 0;
 }
-.hide{
-  animation: hide-item 2s ease-in forwards;
+.boss-Text-enter-active{
+  opacity: 1;
+  transition: opacity 2000ms;
 }
-@keyframes show-item{
-  0%{
-    opacity: 0;
-    color:yellow;
-  }
-  50%{
-    opacity: 0.5;
-    color: red;
-  }
-  100%{
-    opacity: 1;
-    color: green;
-  }
+.boss-Text-enter-done{
+opacity: 1;
 }
-@keyframes hide-item{
-  0%{
-    opacity: 1;
-    color:yellow;
-  }
-  50%{
-    opacity: 0.5;
-    color: red;
-  }
-  100%{
-    opacity: 0;
-    color: green;
-  }
+
+.boss-Text-exit{
+  opacity: 1;
+}
+.boss-Text-exit-active{
+  opacity: 0;
+  transition: opacity 2000ms;
+}
+.boss-Text-exit-done{
+  opacity: 0;
 }
