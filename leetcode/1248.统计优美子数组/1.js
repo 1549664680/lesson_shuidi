@@ -1,24 +1,3 @@
-// var numberOfSubarrays = function(nums, k) {
-//   let numodd = 0;
-//   let numslen = nums.length
-//   for (let i = 0; i < numslen; i++){ 
-//     if(nums[i]%2!=0){
-//       nums[i] = '#'
-//     }
-//   }
-//   // console.log(nums)
-//   for (let i = 0; i <= numslen-k; i++){ 
-//     for (let j = 0; j < numslen - k; j++){
-//       if(i+k+j<=10){
-//         console.log(nums.slice(i,i+k+j),i,i+k+j)
-//         let list = nums.slice(i,i+k+j).toString().match(new RegExp('#','g'))
-//         // console.log(list)
-//         numodd += (list?list.length:0) >= k?1:0
-//       }
-//     }
-//   }
-//   return numodd
-// };
 var numberOfSubarrays = function(nums, k) {
   let numodd = 0;
   let numslen = nums.length
@@ -36,8 +15,8 @@ var numberOfSubarrays = function(nums, k) {
   }
   return numodd
 };
-console.log(numberOfSubarrays([1,1,2,1,1],
-  3)) 
+console.log(numberOfSubarrays([1,1,1,1,1],
+  1)) 
      // 按位与运算 &  相同为1，相异为0。
     // 按位或     |  有一为1
     // 按位异或   ^  相同为0，相异为1
