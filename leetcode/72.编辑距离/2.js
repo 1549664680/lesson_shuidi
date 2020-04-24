@@ -46,4 +46,4 @@ var minDistance = function(word1, word2) {
   }
   return minDist[n-1][m-1];
 };
-console.log(minDistance("horse","ros"))
+console.log(minDistance("mitcmu","mtacnu"))

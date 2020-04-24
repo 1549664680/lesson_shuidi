@@ -8,8 +8,6 @@ var waysToChange = function (n) {
       // 每一次计数，都是在原本的基础上进行 当金额为10 时  res[10-10] =1 只能用10分兑换一次 res[10]原本是=3 因为 5+5 1.+1. 1..+5
     }
     // console.log(res)
-  }
-  // console.log(res)
-  return res[n]
+  }  return res[n]
 };
 console.log(waysToChange(26))

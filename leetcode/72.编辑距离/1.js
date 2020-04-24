@@ -35,5 +35,5 @@ var minDistance = function(word1, word2) {
   helper(0,0,0);
   return minDist;
 };
-minDistance("horse","ros")
+console.log(minDistance("mitcmu","mtacnu"))
 /// 递归回溯， 结果超时
