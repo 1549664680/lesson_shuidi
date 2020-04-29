@@ -1,7 +1,7 @@
 import { CHANGE_INPUT, ADDITEM, DELETEITEM } from './actionType'
 
 const defaultState = {
-  inputVlue: 'Write Something',
+  inputValue: 'Write Something',
   list: [
     '早上开会',
     '中午睡觉',
@@ -13,13 +13,13 @@ export default (state = defaultState, action) => {
   // reducer 里只能接受state ，不能改变state
   if (action.type === CHANGE_INPUT) {
     let newState = JSON.parse(JSON.stringify(state))
-    newState.inputVlue = action.value
+    newState.inputValue = action.value
     return newState
   }
   if (action.type === ADDITEM) {
     let newState = JSON.parse(JSON.stringify(state))
-    newState.list.push(newState.inputVlue)
-    newState.inputVlue = ' '
+    newState.list.push(newState.inputValue)
+    newState.inputValue = ''
     return newState
   }
   if (action.type === DELETEITEM) {
