@@ -1,6 +1,6 @@
 import React from 'react'
 import '../public/style/components/header.css'
-import {Row,Col,Menu} from 'antd'
+import {Row,Col,Menu,Icon} from 'antd'
 
 const Header=()=>{
   return (
@@ -13,12 +13,15 @@ const Header=()=>{
         <Col xs={0} sm={0} md={14} lg={8} xl={6}>
           <Menu mode="horizontal" >
             <Menu.Item key="home">
+            <Icon type="home"/>
               首页
             </Menu.Item>
             <Menu.Item key="video">
+            <Icon type="youtube"/>
               视屏
             </Menu.Item>
-            <Menu.Item key="lift">
+            <Menu.Item key="life">
+            <Icon type="smile"/>
               生活
             </Menu.Item>
           </Menu>

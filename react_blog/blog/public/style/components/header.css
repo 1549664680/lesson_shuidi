@@ -1,9 +1,13 @@
 .header{
+  position:fixed ;
+  top: 0;
+  width: 100%;
   background-color: #fff;
   padding: .4rem;
   overflow: hidden;
   height: 3.2rem;
   border-bottom: 1px solid #b2b4b6;
+  z-index: 999;
 }
 .header-logo{
   color: #1e90ff;
