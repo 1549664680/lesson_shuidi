@@ -1,21 +1,15 @@
-var lengthOfLongestSubstring = function(s) {
-       var max=0;
-       var arr
-    for(var i=0;i<s.length;i++){    
-        var count=1;
-        arr=s[i];
-        for(var j=i+1;j<s.length;j++){
-            if(arr.indexOf(s[j])==-1){
-                arr = arr + s[j]
-                count++;
-            }
-            else
-            { 
-            break
-            }
-        }
-        max = count>max?count:max
+var lengthOfLongestSubstring = function (s) {
+  if(s.length === 1) return 1
+  let arr = [s[0]]
+  let max = 0;
+  for(let i=1;i<s.length;i++ ){
+    let site = arr.indexOf(s[i])
+    if(site != -1){
+      arr.splice(0,site+1)
     }
-   return max
+    arr.push(s[i])
+    max = arr.length>max?arr.length:max
+  }
+  return max
 };
-console.log(lengthOfLongestSubstring("pwwkew"))
+console.log(lengthOfLongestSubstring("dvdf"))
