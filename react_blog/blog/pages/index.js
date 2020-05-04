@@ -1,15 +1,34 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import React, { useState } from 'react'
-import { List, Row, Col ,Icon} from 'antd'
+import { List, Row, Col, Icon } from 'antd'
 import Header from '../components/Header'
-import'../public/style/pages/index.css'
+import '../public/style/pages/index.css'
 import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
 import axios from 'axios'
+import servicePath from '../config/apiUrl'
+import marked from 'marked'
+import hljs from "highlight.js";
+import 'highlight.js/styles/monokai-sublime.css';
 
 export default function Home(list) {
   const [mylist, setMyLsit] = useState(list.data)
+  const renderer = new marked.Renderer();
+  marked.setOptions({
+    renderer: renderer,
+    gfm: true,
+    pedantic: false,
+    sanitize: false,
+    tables: true,
+    breaks: false,
+    smartLists: true,
+    smartypants: false,
+    highlight: function (code) {
+            return hljs.highlightAuto(code).value;
+    }
+  }); 
   return (
     <div>
       <Head>
@@ -24,30 +43,36 @@ export default function Home(list) {
             itemLayout="vertical"
             renderItem={item => (
               <List.Item>
-                <div className="list-title">{item.title}</div>
-                <div className="list-icon">
-                  <span> <Icon type="calendar"/>{item.addTime}</span>
-                  <span> <Icon type="folder"/>{item.typeName}</span>
-                  <span> <Icon type="fire"/>{item.view_count}人</span>
+                <div className="list-title">
+                  <Link href={{ pathname: '/detailed', query: { id: item.id } }}>
+                    <a>
+                    {item.title}
+                    </a>
+                  </Link>
                 </div>
-                <div className="list-context">{item.content}</div>
+                <div className="list-icon">
+                  <span> <Icon type="calendar" />{item.addTime}</span>
+                  <span> <Icon type="folder" />{item.typeName}</span>
+                  <span> <Icon type="fire" />{item.view_count}人</span>
+                </div>
+                <div className="list-context" dangerouslySetInnerHTML={{__html:marked(item.introduce)}}></div>
               </List.Item>
             )}
           />
         </Col>
         <Col className="comm-rigth" xs={0} sm={0} md={7} lg={5} xl={4}>
-        <Author/>
-        <Advert/>
+          <Author />
+          <Advert />
         </Col>
       </Row>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
-Home.getInitialProps = async()=>{
-  const promise = new Promise((resolve) =>{
-    axios('http://127.0.0.1:7001/default/getArticleList').then(
-      (res)=>{
+Home.getInitialProps = async () => {
+  const promise = new Promise((resolve) => {
+    axios(servicePath.getArticleList).then(
+      (res) => {
         resolve(res.data)
       }
     )
