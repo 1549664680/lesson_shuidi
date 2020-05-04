@@ -40,7 +40,8 @@ module.exports = appInfo => {
     domainWhiteList:['*']
   }
   config.cors = {
-    origin:'*',
+    origin:'http://localhost:3000',
+    credentials:true, // cook跨域
     allowMethods:'GET,HEAD,PUT,DELETE,PATCH,OPTIONS'
   }
   return {
