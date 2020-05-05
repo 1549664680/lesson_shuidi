@@ -5,6 +5,7 @@ import { Row, Col, Input, Select, Button, DatePicker, message } from 'antd'
 import axios from 'axios'
 import servicePath from '../config/apiUrl'
 import { Redirect } from 'react-router-dom'
+import moment from 'moment'
 const { Option } = Select
 const { TextArea } = Input
 
@@ -22,6 +23,11 @@ function AddArticle(props) {
   const [selectedType, setSelectType] = useState('请选择文章类型') //选择的文章类别
   useEffect(() => {
     getTypeInfo()
+    let id = props.match.params.id
+    if(id){
+      setArticleId(id)
+      getArticlebyId(id)
+    }
   }, [])
   marked.setOptions({
     renderer: new marked.Renderer(),
@@ -125,8 +131,27 @@ function AddArticle(props) {
       )
     }
   }
+  const getArticlebyId=(id)=>{
+    axios(servicePath.getArticleById+id,{
+      withCredentials:true
+    }).then(
+      res=>{
+        // console.log(res.data.data[0])
+        let articleInfo = res.data.data[0]
+        setArticleTitle(articleInfo.title)
+        setArticleContent(articleInfo.content)
+        let html = marked(articleInfo.content)
+        setMarkdownContent(html)
+        setIntroducemd(articleInfo.introduce)
+        let tmpInt = marked(articleInfo.introduce)
+        setIntroducehtml(tmpInt)
+        setShowDate(articleInfo.addTime)
+        setSelectType(articleInfo.typeId)
+      }
+    )
+  }
   return (
-    <div>
+    <div >
       <Row gutter={5}>
         <Col span={18}>
           <Row gutter={10}>
@@ -139,7 +164,6 @@ function AddArticle(props) {
               />
             </Col>
             <Col span={4}>
-              &nbsp;
               <Select defaultValue={selectedType} size="large" onChange={selectTypehandler}>
                 {
                   typeInfo.map((item, index) => {
@@ -158,6 +182,7 @@ function AddArticle(props) {
                 className="markdown-content"
                 rows={35}
                 placeholder="文章内容"
+                value={articleContent}
                 onChange={changeContent}
               />
             </Col>
@@ -172,7 +197,7 @@ function AddArticle(props) {
         <Col span={6}>
           <Row>
             <Col span={24} >
-              <Button size="large" style={{ marginRight: 30 }}>暂存文章</Button>
+              <Button size="large" style={{ marginRight: 30,marginLeft: 40}}>暂存文章</Button>
               <Button type="primary" size="large" onClick={saveArticle}>发布文章</Button>
             </Col>
             <Col span={24} style={{ marginTop: 30 }}>
@@ -180,6 +205,7 @@ function AddArticle(props) {
                 rows={4}
                 placeholder="文章简介"
                 onChange={changeIntroduce}
+                value={introducemd}
               >
               </TextArea>
               <div className="introduce-html" style={{ marginTop: 30 }}

@@ -6,8 +6,8 @@ function Main(){
   return (
     <Router>
       <Route path="/" exact component={Login}/>
-      <Route path="/login" exact component={Login}/>
-      <Route path="/admin" exact component={AdminIndex}/>
+      <Route path="/login"  component={Login}/>
+      <Route path="/admin"  component={AdminIndex}/>
     </Router>
   )
 }

@@ -8,4 +8,5 @@ body{
   width:100%;
   overflow: hidden;
   background-size:cover;
+  overflow-y: auto; 
 }
