@@ -1,0 +1,23 @@
+{
+  "name": "swagger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "egg-bin dev --port 7007",
+    "dbload": "egg-sequelize-auto -o ./app/model -h localhost -p 3306 -d react_blog -u root -x 19995024ljr",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "egg": "^2.26.0",
+    "egg-sequelize": "^5.2.1",
+    "egg-swagger-doc": "^2.3.2"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.14.1",
+    "egg-sequelize-auto": "^0.1.1"
+  }
+}
