@@ -11,6 +11,7 @@ n1.next = n2;
 n2.next = n3;
 n3.next = n4;
 n4.next = n5;
+
 var reverseKGroup = function(head, k) {
   if(!head || k == 1) return head;
   var dummy = { //哨兵结点
