@@ -15,11 +15,16 @@ let  a = {
     yield 3;
   })(),
   valueOf(){
-    return this.gn.next().value
+    return this.gn.next().value 
   }
 }
 Object.defineProperty(window,'a',{
   get:function(){
-    return this.value +=1
+    if(this.value){
+          return this.value +=1
+    }else{
+      return this.value = 1
+    }
+
   }
 })
