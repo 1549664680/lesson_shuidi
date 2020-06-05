@@ -10,7 +10,18 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
   let host = 'http://localhost:8888';
-  let qrcodeId;
+  let qrcodeId="5ed9fa5f8fa4de18c05a0b62";
+  let interval = null
+  function checkQRCode() {
+    let url = `${host}/qrcode/check?qrcodeId=${qrcodeId}`;
+    return axios.get(url)
+      .then(res => {
+        return res.data
+      })
+      .catch(err => {
+        return err
+      })
+  }
   function geneQRCode() {
     let url = `${host}/qrcode/gene`;
     return axios.get(url)
@@ -21,18 +32,37 @@
         return err
       })
   }
-  geneQRCode()
-    .then(data => {
-      // console.log(data);
-      qrcodeId = data.data.qrcodeId;
-      const oImg = document.getElementById('qrcode');
-      oImg.onload = function() {
-        // 等待用户来扫一扫
-      }
-      oImg.src = data.data.qrcodeUrl
+  // geneQRCode()
+  //   .then(data => {
+  //     // console.log(data);
+  //     qrcodeId = data.data.qrcodeId;
+  //     const oImg = document.getElementById('qrcode');
+  //     oImg.onload = function() {
+  //       // 等待用户来扫一扫
+  //     }
+  //     oImg.src = data.data.qrcodeUrl
 
-    })
-  
+  //   })
+    interval = setInterval(() => {
+    checkQRCode()
+      .then(data => {
+        const qrcodeData = data.data;
+        if (qrcodeData.success) {
+          console.log('登录授权成功, 跳转中....');
+          clearInterval(interval)
+          localStorage.setItem('token', qrcodeData.userInfo.token);
+          return;
+        }
+        if (qrcodeData.scanned) {
+          console.log('扫码中, 头像， 用户名显示一下')
+        }
+        if (qrcodeData.expired) {
+          console.log('已过期， 请刷新');
+          clearInterval(interval)
+        }
+        console.log(qrcodeData);
+      })
+  }, 1000)
   </script>
 </body>
 </html>
