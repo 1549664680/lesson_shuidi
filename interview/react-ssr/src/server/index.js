@@ -2,13 +2,20 @@ import express from 'express';
 import React from 'react'
 import Header from '../components/Header.jsx'
 import {renderToString}  from 'react-dom/server'
+import {renderRoutes}from 'react-router-config'
+import {StaticRouter} from 'react-router-dom'
+import Routes from '../Routes'
 const app = express();
 app.use(express.static('static'))
 app.get('*',(req,res)=>{
   // 入口组件 jsx
-  const App = (<Header/>)
+  const App = (
+    <StaticRouter location={req.url}>
+      {renderRoutes(Routes)}
+    </StaticRouter>
+  )
   const htmlStr = renderToString(App)
-  console.log(htmlStr)
+  // console.log(htmlStr)
   res.send(`<!DOCTYPE html>
   <html lang="en">
   <head>
