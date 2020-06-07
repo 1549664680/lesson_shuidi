@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .grid {
+      margin: 50px;
+      height: 300px;
+      width: 300px;
+      display: grid;
+      grid-template-rows: 100px 100px 100px;
+      grid-template-columns: 100px 100px 100px;
+      box-sizing: border-box;
+    }
+
+    .grid>li {
+      margin-top: -4px;
+      margin-left: -4px;
+      box-sizing: border-box;
+      list-style: none;
+      line-height: 100px;
+      text-align: center;
+      border: 4px solid #ccc;
+    }
+
+    .grid>li:hover {
+      border-color: red;
+      position: relative;
+      /*z-index:2;*/
+    }
+  </style>
+  <ul class="grid">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>grid</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+  </ul>
+
+</body>
+
+</html>

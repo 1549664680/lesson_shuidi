@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .blockDiv {
+      margin:50px;
+      width:300px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .blockDiv > div {
+      width: 90px;
+      margin-left: -5px;
+      margin-top: -5px;
+      height: 90px;
+      box-sizing: border-box;
+      border: 5px solid  #ccc;
+    }
+    .blockDiv > div:hover {
+      border-color: red;
+      position: relative;
+    }
+  </style>
+
+  <body>
+    <div class="blockDiv">
+      <div ></div>
+      <div ></div>
+      <div ></div>
+      <div ></div>
+      <div ></div>
+      <div ></div>
+      <div ></div>
+      <div ></div>
+      <div ></div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .table{
+      margin: 100px;
+      width: 300px;
+      height: 300px;
+      text-align: center;
+      border: 4px solid #ccc;
+      border-collapse: collapse;
+      box-sizing: border-box;
+    }
+    .table td{
+      /*height: 100px;*/
+      width: 100px;
+      vertical-align: middle;
+      border: 4px solid #ccc;
+      line-height: 100px;
+      margin-top: -4px;
+      margin-left: -4px;
+    }
+    .table td:hover{
+      border-color: red;      
+      position: absolute;
+      width: 94px;
+      height: 100px;
+      box-sizing: content-box;
+    }
+  </style>
+  <table class="table">
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>table</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </table>
+</body>
+</html>
