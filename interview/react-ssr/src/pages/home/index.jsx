@@ -15,7 +15,7 @@ class Home extends React.Component {
         {
           commentList.map((e, index) => {
             return (
-              <li id={e.content}>
+              <li id={e.content} key={index}>
                 {e.content}
               </li>
             )
