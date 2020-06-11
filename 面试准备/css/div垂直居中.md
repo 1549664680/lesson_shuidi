@@ -1,0 +1,81 @@
+<div class="wp">
+    <div class="box size">123123</div>
+</div>
+
+1. ## 仅居中元素定宽高适用
+  # absolute + 负margin
+    .wp {
+        position: relative;
+    }
+    .box {
+        position: absolute;;
+        top: 50%;
+        left: 50%;
+        margin-left: -50px;
+        margin-top: -50px;
+    }
+  # absolute + margin auto
+    .wp {
+        position: relative;
+    }
+    .box {
+        position: absolute;;
+        margin: auto;
+    }
+  # absolute + calc
+    .wp {
+    position: relative;
+    }
+    .box {
+    position: absolute;;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    }
+
+2. ## 居中元素不定宽高
+  # absolute + transform
+    .wp {
+      position: relative;
+    }
+    .box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  # lineheight
+    .wp {
+      line-height: 300px;
+      text-align: center;
+      font-size: 0px;
+    }
+    .box {
+      font-size: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: initial;
+      text-align: left; /* 修正文字 */
+    }
+  # css-table
+  .wp {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.box {
+    display: inline-block;
+}
+  # flex
+    .wp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  # grid
+    .wp {
+    display: grid;
+    }
+    .box {
+    align-self: center;
+    justify-self: center;
+    }
