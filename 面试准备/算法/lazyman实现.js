@@ -53,6 +53,8 @@ class LayManclass {
 function LazyMan(name) {
   return new LayManclass(name);
 }
+// 每次调用完函数，都要返回this，是的下次.可以调用
+// 每个任务都调用next使得下次任务得以进行
 LazyMan('Tony').eat('lunch').eat('dinner').sleepFirst(5).sleep(10).eat('junk food');
 // Hi I am Tony
 // 等待了5秒...

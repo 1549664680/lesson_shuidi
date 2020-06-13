@@ -1,7 +1,7 @@
 // 1. provit 找到正确的位置(数组里面的索引)
 // 2. [xx < provit < xx ] < provit <  右边 大于 provit 的数 
 // 分治
-// [8, 9, 7, -1, 5, 4, 3, 2, 1]
+// [8, 6, 7, -1, 5, 4, 3, 2, 1]
 // j ++: 交换的时候 大的数不断来到右边
 // piovt 的位置就是 j
 function partition(nums, left, right) {
@@ -15,10 +15,13 @@ function partition(nums, left, right) {
       //交换
       // i: 1
       j ++;
+      // console.log(i,j)
       swap(nums, i, j)
+      console.log(nums)
     }
   }
   swap(nums, j, left);
+
   // j k
   partition(nums, left, j - 1);
   partition(nums, j + 1, right);
@@ -29,6 +32,6 @@ function swap(arr, i, j) {
 function quickSort(arr) {
   partition(arr, 0, arr.length - 1)
 }
-const arr = [8, 9, 7, -1, 5, 4, 3, 2, 1];
+const arr = [4, 6, 7, -1, 5, 4, 3, 2, 1];
 quickSort(arr);
 console.log(arr);

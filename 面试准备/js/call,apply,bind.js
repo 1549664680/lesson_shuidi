@@ -27,8 +27,8 @@ Function.prototype.myBind = function(thisObj, ...arg1) {
   function innerFunc(...arg2) {
     const args = arg1.concat(arg2);
     let isNewCall = this instanceof innerFunc;
-    return fn.call(isNewCall ? this : thisObj, ...args);
+    return fn.call(isNewCall ? this : Object(thisObj), ...args);
   }
-  innerFunc.prototype = fn.prototype; // 继承原型上的属性和方法
+  innerFunc.prototype = Object.create(fn.prototype); // 继承原型上的属性和方法
   return innerFunc;
 }
