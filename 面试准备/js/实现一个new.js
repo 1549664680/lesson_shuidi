@@ -16,7 +16,7 @@ sanmao.bark()
 // 执行构造函数，传递参数，改变this指向 Dog.call(obj, ...args)
 // 最后把obj赋值给sanmao
 function _new(fn, ...arg) {
-  const obj = Object.create(fn.prototype);
+  const obj = Object.create(fn.prototype); // 创建一个新对象，指向构造函数的prototype
   //Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。
   const ret = fn.apply(obj, arg);
   return ret instanceof Object ? ret : obj;
