@@ -31,3 +31,69 @@ function test () {
 // children2-1
 // children3
 // children3-1
+
+console.log('script start')
+setTimeout(function() {
+  console.log('setTimeout')
+}, 0)
+new Promise((resolve, reject)=>{
+  console.log("promise1") 
+  resolve()
+})
+.then(()=>{
+  console.log("then11")
+  new Promise((resolve, reject)=>{
+    console.log("promise2")
+    resolve();
+  })
+  .then(() => {
+    console.log("then2-1")
+  })
+  .then(() => {
+    console.log("then2-2")
+  })
+})
+.then(()=>{
+  console.log("then12")
+})
+console.log('script end')
+
+// script start -> promise1 -> script end -> then11 ->
+//  promise2 -> then2-1 -> then12 -> then2-2 -> setTimeout
+
+console.log('script start')
+
+  async function async1() {
+      await async2()
+      console.log('async1 end')
+  }
+  async function async2() {
+      console.log('async2 end')
+  }
+  async1()
+
+  setTimeout(function() {
+      console.log('setTimeout')
+  }, 0)
+
+  new Promise(resolve => {
+      console.log('Promise')
+      resolve()
+  })
+  .then(function() {
+      console.log('promise1')
+  })
+  .then(function() {
+      console.log('promise2')
+  })
+
+  console.log('script end')
+
+  // script start
+  // VM105:8 async2 end
+  // VM105:17 Promise
+  // VM105:27 script end
+  // VM105:5 async1 end
+  // VM105:21 promise1
+  // VM105:24 promise2
+  // VM105:13 setTimeout
