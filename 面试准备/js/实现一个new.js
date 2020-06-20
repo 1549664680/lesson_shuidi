@@ -10,7 +10,7 @@ Dog.prototype.sayName = function() {
 let sanmao = new Dog('三毛')
 sanmao.sayName()
 sanmao.bark()
-// new 的作用
+// new 的作用                   
 // 创建一个新对象obj
 // 把obj的__proto__指向Dog.prototype 实现继承
 // 执行构造函数，传递参数，改变this指向 Dog.call(obj, ...args)
