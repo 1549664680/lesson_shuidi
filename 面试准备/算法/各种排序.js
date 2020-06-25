@@ -33,7 +33,9 @@ function maopao1(arr){
   return array
 }
 
-//快排
+//快速排序是冒泡排序的改进算法。它也是通过不断比较和移动交换来实现排序的，
+// 只不过它的实现增大了记录的比较和移动的距离，将关键字较大的元素从前面直接放到后面，
+// 关键字较小的元素直接从后面放到前面，从而减小了比较次数和交换次数。
 function partition(nums, left, right) {
   if (left >= right) return; //退出递归
   let piovt = nums[left]; // 以第一个为基准

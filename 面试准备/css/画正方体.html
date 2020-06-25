@@ -4,15 +4,12 @@
 <meta charset="UTF-8">
 <title>perspective</title>
 <style>
-.wrapper{
-width: 50%;
-float: left;
-}
 .cube{
-font-size: 4em;
+font-size: 3em;
 width: 2em;
-margin: 1.5em auto;
-transform-style:preserve-3d;
+margin: 2em auto;
+transform-style:preserve-3d; 
+/* 保留3D效果 */
 transform:rotateX(-35deg) rotateY(30deg);
 }
 .side{
@@ -46,15 +43,13 @@ transform:translateZ(-1em);
 </style>
 </head>
 <body>
-<div class="wrapper w1">
 <div class="cube">
 <div class="side front">1</div>
-<div class="side back">6</div>
+  <div class="side back">6</div>
 <div class="side right">4</div>
 <div class="side left">3</div>
 <div class="side top">5</div>
 <div class="side bottom">2</div>
-</div>
 </div>
 </body>
 </html>

@@ -52,7 +52,7 @@ let result1 = it.next()
 let result2 = it.next()
 let result3 = it.next()
 4. ### Async/await
-async、await 是异步的终极解决方案
+async、await 是异步的终极解决方案,也是Generator的语法糖
 
 **优点**是：代码清晰，不用像 Promise 写一大堆 then 链，处理了回调地狱的问题
 

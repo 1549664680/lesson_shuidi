@@ -20,13 +20,13 @@
   所以，我们应该避免频繁的使用上述的属性，他们都会强制渲染刷新队列。
 5. 减少重绘与回流
   # css
-  使用 transform 替代 top
-  使用 visibility 替换 display: none ，因为前者只会引起重绘，后者会引发回流（改变了布局
-  避免使用table布局，可能很小的一个小改动会造成整个 table 的重新布局。
+  1. 使用 transform 替代 top
+  2. 使用 visibility 替换 display: none ，因为前者只会引起重绘，后者会引发回流（改变了布局
+  3. 避免使用table布局，可能很小的一个小改动会造成整个 table 的重新布局。
   避免设置多层内联样式，CSS 选择符从右往左匹配查找，避免节点层级过多。
-  将动画效果应用到position属性为absolute或fixed的元素上
+  4. 将动画效果应用到position属性为absolute或fixed的元素上
   避免使用CSS表达式
-  将频繁重绘或者回流的节点设置为图层，图层能够阻止该节点的渲染行为影响别的节点，例如will-change、video、iframe等标签，浏览器会自动将该节点变为图层。
+  5. 将频繁重绘或者回流的节点设置为图层，图层能够阻止该节点的渲染行为影响别的节点，例如will-change、video、iframe等标签，浏览器会自动将该节点变为图层。
   # JavaScript
   避免频繁操作样式
   避免频繁操作DOM
