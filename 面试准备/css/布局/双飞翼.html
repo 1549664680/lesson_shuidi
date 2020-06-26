@@ -24,7 +24,7 @@
     .left {
       width: 100px;
       height: 200px;
-      margin-left: -100%;       /*基于父元素 */
+      margin-left: -100%;      
       background-color: #a0c263;
     }
     .right {
@@ -45,3 +45,9 @@
   </section>
 </body>
 </html>
+<!-- 
+与圣杯不同，双飞翼中间的middle由一个wrapper包裹
+采用float：left布局
+外面的wrapper宽度100%,里面的mian设置margin: 0 100px 0 100px;
+子元素left,right分别设置margin-left
+ -->
