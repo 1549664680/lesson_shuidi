@@ -13,5 +13,34 @@
  * @return {boolean}
  */
 var checkInclusion = function(s1, s2) {
-  return !!(new RegExp(s1).exec(s2) ||new RegExp(s1.split('').reverse().join('')).exec(s2) )
+  let map1 = new Map();
+  let map2 = new Map();
+  let res = true
+  for(let i=0;i<s1.length;i++){
+    if(map1.has(s1[i])){
+      map1.set(s1[i],map1.get(s1[i])+1)
+    }else{
+      map1.set(s1[i],1)
+    }
+  }
+  for(let i=0;i<=s2.length-s1.length;i++){
+    for(let j=i;j<i+s1.length;j++){
+      if(map2.has(s2[j])){
+        map2.set(s2[j],map2.get(s2[j])+1)
+      }else{
+        map2.set(s2[j],1)
+      }
+    }
+    for(let key of map1.keys()){
+      if(!(map2.has(key) && map2.get(key) === map1.get(key))){
+        res = false
+      }
+    }
+    if(res){return true}
+    res = true
+    map2.clear()
+  }
+  return false
 };
+// 窗口移动，两个map，移动一次，比较一次map
+console.log(checkInclusion("adc","bcda"))

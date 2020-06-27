@@ -52,11 +52,10 @@ let result1 = it.next()
 let result2 = it.next()
 let result3 = it.next()
 4. ### Async/await
-async、await 是异步的终极解决方案,也是Generator的语法糖
-
+async、await 是异步的终极解决方案,generator 加上 Promise的语法糖
 **优点**是：代码清晰，不用像 Promise 写一大堆 then 链，处理了回调地狱的问题
 
-**缺点**：await 将异步代码改造成同步代码，如果多个异步操作没有依赖性而使用 await 会导致性能上的降低。
+**缺点**：await 将异步代码改造成同步代码，果多如个异步操作没有依赖性而使用 await 会导致性能上的降低。
 
 async function test() {
   // 以下代码没有依赖性的话，完全可以使用 Promise.all 的方式
