@@ -28,3 +28,5 @@ var longestCommonPrefix = function(strs) {
   }
   return res
 };
+// 以第一个数为基准，对strs进行循环，每两个进行对比，找出最长的公共前缀
+// 如果没有，直接返回空字符，否则res更新为公共前缀
