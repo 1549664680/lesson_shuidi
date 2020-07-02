@@ -21,3 +21,23 @@
   2.  Last-Modified/If-Modified-Since
   Last-Modified/If-Modified-Since 的值代表的是文件的最后修改时间，第一次请求服务端会把资源的最后修改时间放到 Last-Modified 响应头中，第二次发起请求的时候，请求头会带上上一次响应头中的 Last-Modified 的时间，并放到 If-Modified-Since 请求头属性中，服务端根据文件最后一次修改时间和 If-Modified-Since 的值进行比较，如果相等，返回 304 ，并加载浏览器缓存
   
+
+  缓存位置
+强缓存命中或者协商缓存阶段服务器换回 304 的时候，直接从缓存中获取资源
+浏览器中的缓存位置一共有四种，按优先级从高到低依次为：
+
+Service Worker
+Memory Cache
+Disk Cache
+Push Cache
+#Service Worker
+Service Worker 借鉴了 Web Worker 的思路，即让 JS 运行在主线程之外，由于它脱离了浏览器的窗体，因此无法直接访问 DOM。虽然如此，但它仍然能帮助完成很多有用的功能，比如离线缓存、消息推送和网络代理等功能。其中的离线缓存就是 Service Worker Cache
+
+#Memory Cache 和 Disk Cache
+Memory Cache 指的是内存缓存，从效率上讲它是最快的。但是从存活时间来讲又是最短的，当渲染进程结束后，内存缓存也就不存在了
+Disk Cache 就是存储在磁盘中的缓存，从存取效率上讲是比内存缓存慢的，但是他的优势在于存储容量和存储时长
+
+比较大的JS、CSS文件会直接被丢进磁盘，反之丢进内存
+内存使用率比较高的时候，文件优先进入磁盘
+#Push Cache
+即推送缓存，这是浏览器缓存的最后一道防线，是 HTTP/2 中的内容，虽然现在应用的并不广泛，但随着 HTTP/2 的推广，它的应用越来越广泛

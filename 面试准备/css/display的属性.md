@@ -4,8 +4,8 @@
   inline：默认此元素会被显示为内联元素，元素前后没有换行符。
   line-block：行内块元素。（CSS2.1 新增的值）[IE6/7不支持]
   list-item：此元素会作为列表显示。
-  inline-table：此元素会作为内联表格来显示（类似 table），表格前后没有换行符。
   table：此元素会作为块级表格来显示（类似 table），表格前后带有换行符。
+  inline-table：此元素会作为内联表格来显示（类似 table），表格前后没有换行符。
   table-row：此元素会作为一个表格行显示（类似 tr）。
   table-cell：此元素会作为一个表格单元格显示（类似 td 和 th）.
   inherit：规定应该从父元素继承 display 属性的值。

@@ -20,3 +20,37 @@ A的实际宽度：300 - 37.5 = 262.5
   MDN定义：指定了 flex 元素在主轴方向上的初始大小
   上面的例子可以通过最终元素的宽度看出几个属性的优先级关系：
 max-width/min-width > flex-basis > width > box
+
+## Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性
+
+父类：
+1. 项目方向 flex-direction:
+row 项目将水平显示 
+row-reverse 与 row 相同，但是以相反的顺序  
+column:项目将垂直显示
+column-reverse	与 column 相同，但是以相反的顺序。
+2. 换行方式：flex-wrap 
+nowarp
+warp
+warp-reverse
+3. flex-flow  上面两种的缩写 默认row nowarp
+4. 主轴对其方式：  justify-content
+flex-start
+flex-end
+center
+space-between
+space-arround
+5. 交叉轴对其方式 : align-items
+flex-start
+flex-end
+center
+baseline
+stretch
+
+子元素
+主轴排列顺序 order 越小越靠前
+flex-grow 0  占比率乘以剩余空间，加上原本长度
+flex-shrink 1  原来长度 减去 压缩率乘以溢出值
+flex-basic auto 用于设置或检索弹性盒伸缩基准值
+flex ：缩写 flex-grow flex-shrink flex-basic  0  1  auto
+align-self:flex-start flex-end center baseline stretch 自己对齐方式

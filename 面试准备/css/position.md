@@ -1,9 +1,9 @@
 1. position:static：默认值
 
-2. position: relative;相对定位  生成相对定位的元素，相对于其正常位置进行定位。
+2. position: relative;相对定位  相对于其正常位置进行定位。
 不会使元素脱离文档流
 
-3. position: absolute;绝对定位 相对于第一个非static父元素定位
+3. position: absolute;绝对定位 相对于第一个非static父元素定位  使元素脱离文档流
 
 4. position: fixed;固定定位 fixed生成固定定位的元素，相对于浏览器窗口进行定位。
 

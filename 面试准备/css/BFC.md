@@ -9,7 +9,7 @@
 body 根元素
 浮动元素：float 除 none 以外的值
 绝对定位元素：position (absolute、fixed)
-display 为 inline-block、table-cells、flex
+display 为 inline-block、table-cell、flex
 overflow 除了 visible 以外的值 (hidden、auto、scroll)
  # 应用
   1. 同一个 BFC 下外边距会发生折叠

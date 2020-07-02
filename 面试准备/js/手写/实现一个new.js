@@ -18,7 +18,7 @@ sanmao.bark()
 function _new(fn, ...arg) {
   const obj = Object.create(fn.prototype); // 创建一个新对象，指向构造函数的prototype
   //Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。
-  const ret = fn.apply(obj, arg);
+  const ret = fn.apply(obj, arg); //如果没有返回值，则返回this
   return ret instanceof Object ? ret : obj;
 }
 var simao = _new(Dog, 'simao')
