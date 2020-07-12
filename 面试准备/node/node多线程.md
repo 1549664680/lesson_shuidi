@@ -1,0 +1,6 @@
+在前端浏览器中，js主线程与ui渲染共用一个线程，导致互相阻塞。
+为了解决这个问题，html5提出了webWorkerAPI，允许创建工作线程并在后台运行
+使得阻塞较为严重的计算不影响主线程上的ui渲染
+通过onmessage，postMessage 进行通信
+
+在node10.5.0中，发布了 worker_threads 模块，给node提供了多线程能力

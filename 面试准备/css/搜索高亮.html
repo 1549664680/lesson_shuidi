@@ -1,74 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>auto complete</title>
+  <title>Document</title>
   <style>
     bdi {
-      color: rgb(0, 136, 255);
-    }
-
-    li {
-      list-style: none;
+      color: red;
     }
   </style>
 </head>
+
 <body>
-  <input class="inp" type="text">
+  <input class="inp" type="text" />
   <section>
-    <ul class="container"></ul>
+    <ul class="container">
+    </ul>
   </section>
+  <script>
+    function debounce(func, wait = 300) { // 防抖
+      let timeout = null;
+      return function () {
+        let ctx = this
+        let args = arguments
+        if (timeout) { clearTimeout(timeout) }
+        timeout = setTimeout(() => {
+          func.apply(ctx, args)
+        }, wait)
+      }
+    }
+    function handle(target) {
+      let reslist = [] // 结果数组
+      data.forEach((value) => { // 对数据进行循环 ，找到包含target的值
+        if (value.indexOf(target) != -1) {
+          reslist.push(value)
+        }
+      })
+      if (reslist.length === 0) { // 如果没有找到，不输出什么
+        container.innerHTML = ''
+        return
+      }
+      reslist.forEach((value) => {
+        let ol = document.createElement('ol') // 创建一个ol标签
+        let reg = new RegExp(target)
+        value = value.replace(reg, `<bdi>${target}</bdi>`) 
+        // 找到目标，使用bdi包围，给bdi一个高亮样式
+        ol.innerHTML = value
+        container.appendChild(ol) // append到父节点上
+      })
+    }
+    const data = ["上海野生动物园", "上饶野生动物园", "北京巷子", "上海中心", "上海黄埔江", "迪士尼上海", "陆家嘴上海中心"]
+    const container = document.querySelector('.container')
+    document.querySelector('.inp').addEventListener('input', debounce(e => {
+      console.log('触发')
+      if (!e.target.value) {
+        container.innerHTML = ''
+      } else {
+        handle(e.target.value)
+      }
+    }))
+  </script>
 </body>
-<script>
 
-  function debounce(fn, timeout = 300) {
-    let t;
-    return (...args) => {
-      if (t) {
-        clearTimeout(t);
-      }
-      t = setTimeout(() => {
-        fn.apply(fn, args);
-      }, timeout);
-    }
-  }
-
-  function memorize(fn) {
-    const cache = new Map();
-    return (name) => {
-      if (!name) {
-        container.innerHTML = '';
-        return;
-      }
-      if (cache.get(name)) {
-        container.innerHTML = cache.get(name);
-        return;
-      }
-      const res = fn.call(fn, name).join('');
-      cache.set(name, res);
-      container.innerHTML = res;
-    }
-  }
-
-  function handleInput(value) {
-    const reg = new RegExp(`\(${value}\)`);
-    const search = data.reduce((res, cur) => {
-      if (reg.test(cur)) {
-        const match = RegExp.$1;
-        res.push(`<li>${cur.replace(match, '<bdi>$&</bdi>')}</li>`);
-      }
-      return res;
-    }, []);
-    return search;
-  }
-  
-  const data = ["上海野生动物园", "上饶野生动物园", "北京巷子", "上海中心", "上海黄埔江", "迪士尼上海", "陆家嘴上海中心"]
-  const container = document.querySelector('.container');
-  const memorizeInput = memorize(handleInput);
-  document.querySelector('.inp').addEventListener('input', debounce(e => {
-    memorizeInput(e.target.value);
-  }))
-</script>
 </html>

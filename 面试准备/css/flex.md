@@ -21,6 +21,8 @@ A的实际宽度：300 - 37.5 = 262.5
   上面的例子可以通过最终元素的宽度看出几个属性的优先级关系：
 max-width/min-width > flex-basis > width > box
 
+
+该布局模型的目的是提供一种更加高效的方式来对容器中的条目进行布局、对齐和分配空间。在传统的布局方式中，block 布局是把块在垂直方向从上到下依次排列的；而 inline 布局则是在水平方向来排列。弹性盒布局并没有这样内在的方向限制，可以由开发人员自由操作。
 ## Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性
 
 父类：
@@ -54,3 +56,27 @@ flex-shrink 1  原来长度 减去 压缩率乘以溢出值
 flex-basic auto 用于设置或检索弹性盒伸缩基准值
 flex ：缩写 flex-grow flex-shrink flex-basic  0  1  auto
 align-self:flex-start flex-end center baseline stretch 自己对齐方式
+   flex为一个非负数字n：该数字为flex-grow的值，
+   flex：n；=  flex-grow：n；
+
+                     flex-shrink：1；
+
+                     flex-basis：0%；          
+   flex为两个非负数字n1，n2： 分别为flex-grow和flex-shrink的值，
+   flex：n1 n2; = flex-grow：n1；
+
+                           flex-shrink：n2；
+
+                           flex-basis：0%；          
+   flex为一个长度或百分比L：视为flex-basis的值，
+   flex: L; =  flex-grow：1；
+
+                   flex-shrink：1；
+
+                   flex-basis：L；
+   flex为一个非负数字n和一个长度或百分比L：分别为flex-grow和flex-basis的值，
+   flex：n L；= flex-grow：n；
+
+                        flex-shrink：1；
+
+                        flex-basis：L;

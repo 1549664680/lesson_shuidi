@@ -5,9 +5,7 @@ function maopao(arr){
   for(let i = array.length; i > 0; i--){
     for(let j =0; j < i - 1; j++) {
       if (array[j] > array[j + 1]) {
-        let temp = array[j]
-        array[j] = array[j + 1]
-        array[j + 1] = temp
+        [array[j],array[j+1]] = [array[j+1],array[j]]
       }
     }
   }
@@ -20,9 +18,7 @@ function maopao1(arr){
     let isOk = true
     for(let j =0; j < i - 1; j++) {
       if (array[j] > array[j + 1]) {
-        let temp = array[j]
-        array[j] = array[j + 1]
-        array[j + 1] = temp
+        [array[j],array[j+1]] = [array[j+1],array[j]]
         isOk = false
       }
     }
