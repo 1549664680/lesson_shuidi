@@ -14,7 +14,7 @@ child_process模块提供四个方法创建子进程:
 4种方法有些差异，不过都是spawn() 的延伸应用
 
 2. cluster 模块
-cluster模块就是child——process和net模块的组合应用
-  1. 创建 通过判断cluste.ismaster  是不是主进程还是工作进程，来创建相应的进程
+cluster模块就是child——process和net模块的组合应用r
+  1. 创建 通过判断cluster.ismaster  是不是主进程还是工作进程，来创建相应的进程
   2. cluster创建时，会在内部启动tcp服务器，在cluster。fork（）子进程时，将tcp服务器端socket的文件描述符发给工作进程，如果进程是通过cluster。fork（）复制出来的，那么它的环境变量里就存在node_unique_id,如果工作进程中存在listen（）侦听网络端口的调用，它将拿到文件描述符，通过so_reuseaddr端口重用，实现多个子进程共享端口
   3. 事件 ：fork，online，listening，disconnect，exit，setup

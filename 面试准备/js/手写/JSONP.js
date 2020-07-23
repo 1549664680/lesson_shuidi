@@ -31,7 +31,7 @@ const jsonp = ({ url, params, callbackName }) => {
   };
   return new Promise((resolve, reject) => {
     // 初始化回调函数名称
-    callbackName = callbackName || Math.random().toString.replace(',', ''); 
+    callbackName = callbackName || Math.random().toString()
     // 创建 script 元素并加入到当前文档中
     let scriptEle = document.createElement('script');
     scriptEle.src = generateURL();

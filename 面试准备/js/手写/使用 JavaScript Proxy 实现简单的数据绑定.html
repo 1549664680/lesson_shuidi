@@ -19,6 +19,8 @@
       get: function(target, key, receiver) {
         console.log(`getting ${key}!`);
         return Reflect.get(target, key, receiver);
+        // Reflect 是一个内置的对象，它提供拦截 JavaScript 操作的方法。
+        // 这些方法与proxy handlers的方法相同。Reflect不是一个函数对象，因此它是不可构造的
       },
       set: function(target, key, value, receiver) {
         // console.log('setting',target, key, value, receiver);

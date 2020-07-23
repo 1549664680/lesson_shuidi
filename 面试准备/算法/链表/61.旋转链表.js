@@ -22,7 +22,6 @@ var rotateRight = function(head, k) {
   k = k%(len+1)
   let pre = head
   let i = (len+1) -k
-  console.log(i)
   while(--i){
     pre = pre.next
   }

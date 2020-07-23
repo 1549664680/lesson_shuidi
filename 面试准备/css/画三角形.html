@@ -13,13 +13,28 @@
  border-top: 100px solid blue;
  border-right: 173.2px solid green;
  border-bottom: 100px solid black; */
- height: 0;
-         width: 0;
-         border-width: 50px;
-         border-style: solid;
-         border-color:  transparent #ff0 transparent transparent;
-         /* border-color: chartreuse; */
-         border-radius: 50%;
+  height: 0;
+  width: 0;
+  border-width: 50px;
+  border-style: solid;
+  border-color:  transparent transparent  #ff0  transparent;
+  /* animation: xuanzhuan 1s linear infinite; */
+  transition: all 2s linear 1s;
+
+  /* border-color: chartreuse;  */
+  border-radius: 50%;
+    }
+    .sanjiao:hover{
+      transform: rotate(360deg);
+    }
+    @keyframes xuanzhuan{
+      0%{
+        /* transform: rotate(0deg); */
+        /* transform: rotateY(0deg); */
+      }
+      100%{
+        transform: rotate(360deg);
+      }
     }
   </style>
 </head>

@@ -53,19 +53,6 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
-  # lineheight
-    .wp {
-      line-height: 300px;
-      text-align: center;
-      font-size: 0px;
-    }
-    .box {
-      font-size: 16px;
-      display: inline-block;
-      vertical-align: middle;
-      line-height: initial;
-      text-align: left; /* 修正文字 */
-    }
   # css-table
   .wp {
     display: table-cell;

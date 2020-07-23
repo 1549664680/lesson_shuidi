@@ -1,8 +1,7 @@
 // ##  数组去重
 // 1.  set
-Array.from(new set(arr));
+// Array.from(new set(arr));
 // 2. 利用for嵌套for，然后splice去重（ES5中最常用）
-
 function unique(arr){            
         for(var i=0; i<arr.length; i++){
             for(var j=i+1; j<arr.length; j++){
@@ -14,9 +13,7 @@ function unique(arr){
         }
 return arr;
 }
-
 // 3. indexOf
-
 function unique(arr) {
     if (!Array.isArray(arr)) {
         console.log('type error!')
@@ -31,7 +28,6 @@ function unique(arr) {
     return array;
 }
 // 4. 利用sort() 比较相邻元素
-
 function unique(arr) {
     if (!Array.isArray(arr)) {
         console.log('type error!')
@@ -46,7 +42,6 @@ function unique(arr) {
     }
     return arrry;
 }
-
 // 5. includes  和indexOf有异曲同工之处
 function unique(arr) {
     if (!Array.isArray(arr)) {
@@ -61,12 +56,19 @@ function unique(arr) {
     }
     return array
 }
-
 // 6. filter 
-
 function unique(arr) {
   return arr.filter(function(item, index, arr) {
     //当前元素，在原始数组中的第一个索引==当前索引值，否则返回当前元素
     return arr.indexOf(item, 0) === index;
   });
 }
+
+let arr1 = [2,5,1,2,2]
+let arr2 = [5,5,6,9,6,5,4]
+Array.prototype.unique = function(){
+  return Array.from(new Set(this))
+}
+arr1 = arr1.unique()
+arr2 = arr2.unique()
+console.log(arr1,arr2)

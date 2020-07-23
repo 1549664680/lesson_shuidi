@@ -1,18 +1,34 @@
-// 冒泡排序以及优化
-// 升序冒泡
-function maopao(arr){
-  const array = [...arr]
-  for(let i = array.length; i > 0; i--){
-    for(let j =0; j < i - 1; j++) {
-      if (array[j] > array[j + 1]) {
-        [array[j],array[j+1]] = [array[j+1],array[j]]
+// 选择排序
+function xuanze(array){
+  for(let i =0;i<array.length;i++){
+    let minindex = i;
+    for(let j = i+1;j<array.length;j++){
+      if(array[j] <array[minindex]){
+        minindex = j
       }
     }
+    [array[minindex],array[i]] = [array[i],array[minindex]]
   }
   return array
 }
-// 优化
-function maopao1(arr){
+console.log(xuanze([7,5,6,9,3,5,8,7]))
+// 插入排序 
+
+function insertSort(arr) {
+  var len =arr.length;
+  for (var i=1;i<len; i++) {
+      var temp=arr[i];
+      var j=i-1;//默认已排序的元素
+      while (j>=0 && arr[j]>temp) {  //在已排序好的队列中从后向前扫描
+              arr[j+1]=arr[j]; //已排序的元素大于新元素，将该元素移到一下个位置
+              j--;
+          }
+      arr[j+1]=temp; 
+  }
+  return arr
+}
+// 冒泡及优化
+function maopao(arr){
   const array = [...arr]
   for(let i = array.length; i > 0; i--){
     let isOk = true
@@ -28,7 +44,6 @@ function maopao1(arr){
   }
   return array
 }
-
 //快速排序是冒泡排序的改进算法。它也是通过不断比较和移动交换来实现排序的，
 // 只不过它的实现增大了记录的比较和移动的距离，将关键字较大的元素从前面直接放到后面，
 // 关键字较小的元素直接从后面放到前面，从而减小了比较次数和交换次数。
@@ -54,4 +69,7 @@ function swap(arr, i, j) {
 }
 function quickSort(arr) {
   partition(arr, 0, arr.length - 1)
+  return arr
 }
+console.log(quickSort([7,5,6,9,3,5,8,7]))
+
